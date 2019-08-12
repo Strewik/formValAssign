@@ -1,0 +1,112 @@
+﻿-<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+
+    <title>Registration</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Registration Form</h1>
+        <div class="row">
+            <form class="col s9" id="myForm" novalidate>
+                <div class="row">
+                    <div class="input-field col s9">
+                        <label for="userId">User Id:</label>
+                        <input type="text"
+                               name="User Id"
+                               id="userId"
+                               onfocusout="validateuserId()" />
+                        <span class="helper-text"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s9">
+                        <label for="password">Password:</label>
+                        <input type="password"
+                               name="Password"
+                               id="password"
+                               onfocusout="validatePassword()" />
+                        <span class="helper-text"></span>
+                    </div>
+                    <div class="input-field col s9">
+                        <label for="name">Name:</label>
+                        <input type="text"
+                               name="Name"
+                               id="name"
+                               onfocusout="validatename()" />
+                        <span class="helper-text"></span>
+                    </div>
+                    <div class="input-field col s9">
+                        <label for="address">Address:</label>
+                        <input type="text"
+                               name="address"
+                               id="address"
+                               onfocusout="validateaddress()" />
+                        <span class="helper-text"></span>
+                    </div>
+                    <div class="input-field col s9">
+                        <label for="zip">ZIP Code:</label>
+                        <input type="text"
+                               name="zip"
+                               id="zip"
+                               onfocusout="validatezip()" />
+                        <span class="helper-text"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s9">
+                        <label for="email">Email</label>
+                        <input type="email"
+                               name="Email"
+                               id="email"
+                               onfocusout="validateEmail()" />
+                        <span class="helper-text"></span>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s9">
+                            <div>
+                                Sex:
+                                <input type="radio" name="gender" value="male" checked> Male<br>
+                                <input type="radio" name="gender" value="female"> Female<br>
+                                <input type="radio" id="male" name="sex" value="male">
+                                <label for="male">Male</label>
+                                <input type="radio" id="female" name="sex" value="female">
+                                <label for="female">Female</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s9">
+                            <div>
+                                Language:
+                                <input type="checkbox" id="english" name="Language" value="english">
+                                <label for="english">English</label>
+                                <input type="checkbox" id="nonEnglish" name="Language" value="nonEnglish">
+                                <label for="nonEnglish">Non-English</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s9">
+                            <div>
+                                About:
+                                <textarea maxlength="300" id="about" name="about" style="height:250px; width:600px;">
+                                    
+                                </textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">
+                        Submit
+                    </button>
+    </form>
+           
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
