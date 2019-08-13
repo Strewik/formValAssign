@@ -63,6 +63,14 @@ function validatename() {
     if (!checkIfOnlyLetters(name)) return;
     return true;
 }
+
+function validatesex() {
+    // check if is empty
+    if (checkIfEmpty(sex)) return;
+    
+    return true;
+}
+
 //function validatesex() {
 //    // check if is empty
 //    if (checkIfEmpty(name)) return;
@@ -87,6 +95,8 @@ function validatezip() {
     if (!checkIfOnlyNumbers(zip)) return;
     return true;
 }
+
+
 function validateEmail() {
     if (checkIfEmpty(email)) return;
     if (!containsCharacters(email, 5)) return;
@@ -117,6 +127,7 @@ function checkIfEmpty(field) {
         return false;
     }
 }
+//check if the field is empty
 function isEmpty(value) {
     if (value === '') return true;
     return false;
@@ -129,8 +140,9 @@ function setInvalid(field, message) {
 function setValid(field) {
     field.className = 'valid';
     field.nextElementSibling.innerHTML = '';
-    //field.nextElementSibling.style.color = green;
+    field.nextElementSibling.style.color = green;
 }
+
 function checkIfOnlyLetters(field) {
     if (/^[a-zA-Z ]+$/.test(field.value)) {
         setValid(field);
@@ -149,6 +161,15 @@ function checkIfOnlyNumbers(field) {
         return false;
     }
 }
+
+
+
+function checkIfRadio(field) {
+    if (!document.getElementByID("Male").checked && !document.getElementByID("Female").checked) {
+        alert("Please specify gender");
+        return;
+    }
+            }
 function meetLength(field, minLength, maxLength) {
     if (field.value.length >= minLength && field.value.length <= maxLength) {
         setValid(field);
