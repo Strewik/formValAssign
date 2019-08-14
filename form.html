@@ -1,12 +1,14 @@
-﻿-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />-->
+﻿<!--The form validates-->
+<html lang="en">
+ <head>
+     <meta charset="UTF-8" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+     <link rel="stylesheet" type="text/css"href="style.css" />
+     
 
-    <title>Registration</title>
-</head>
+     <title>Registration</title>
+ </head>
 <body>
     <div class="container">
         <h1>Registration Form</h1>
@@ -322,9 +324,9 @@
                         <div class="input-field col s9">
                             <div>
                                 Sex:
-                                <input type="radio" id="male" name="sex" value="male">
-                                <label for="male">Male</label>
-                                <input type="radio" id="female" name="sex" value="female">
+                                <input type="radio" id="male" name="sex" value="male" style="width:15px;">
+                                <label for="male">Male</label><br>
+                                <input type="radio" id="female" name="sex" value="female" style="width:15px;">
                                 <label for="female">Female</label>
                             </div>
                         </div>
@@ -333,26 +335,30 @@
                         <div class="input-field col s9">
                             <div>
                                 Language:
-                                <input type="checkbox" id="english" name="Language" value="english">
-                                <label for="english">English</label>
-                                <input type="checkbox" id="nonEnglish" name="Language" value="nonEnglish">
-                                <label for="nonEnglish">Non-English</label>
+                                <div>
+                                    <input type="checkbox" id="english" name="Language" value="english" style="width:10px;">
+                                    <label for="english">English</label></br>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="nonEnglish" name="Language" value="nonEnglish" style="width:10px;">
+                                    <label for="nonEnglish">Non-English</label>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="input-field col s9">
                             <div>
                                 About:
-                                <textarea maxlength="300" id="about" name="about" style="height:250px; width:600px;">
-                                    
+                                <textarea maxlength="300" id="about" name="about">
                                 </textarea>
-                            </div>
                         </div>
                     </div>
-                    <button class="btn waves-effect waves-light" type="submit">
-                        Submit
-                    </button>
+                    <div>
+                        <button type="submit">
+                            Submit
+                        </button>
+                    </div>
+                    
     </form>
            
         </div>
@@ -362,14 +368,4 @@
 </body>
 </html>
 
-
-<!--     
-    
-    
-    
-    
-    
-    
-    
-    -->
 

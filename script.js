@@ -1,5 +1,6 @@
 /*
- javascript form vallidation 
+ Javascript form vallidation 
+ The formalidates onFocusOut
  */
 // Input fields
 const userId = document.getElementById('userId');

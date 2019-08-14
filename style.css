@@ -1,0 +1,41 @@
+﻿body
+{width: 33.33%;
+ margin:auto;
+}
+form {
+    overflow: hidden;
+}
+
+input {
+    float: right;
+    clear: both;
+    width: 100%;
+    height: 35px;
+    border: 1px solid;
+    border-color:#CCC;
+    padding:10px;
+    border-top:0px;
+    border-right:0px;
+    border-left:0px;
+
+}
+select {
+    float: right;
+    clear: both;
+    width: 100%;
+    height: 45px;
+    border: 1px solid;
+    border-color: #CCC;
+    border-radius: 5px;
+    padding: 10px;
+}
+textarea {
+    float: right;
+    width: 100%;
+    height: 300px;
+    clear: both;
+    border: 1px solid;
+    border-color: #CCC;
+    border-radius: 5px;
+    padding: 10px;
+}
