@@ -1,3 +1,6 @@
+/*
+ javascript form vallidation 
+ */
 // Input fields
 const userId = document.getElementById('userId');
 const name = document.getElementById('name');
@@ -11,7 +14,7 @@ const form = document.getElementById('myForm');
 const green = '#4CAF50';
 const red = '#F44336';
 
-// Handle form
+// Handle form on clicking submit button
 form.addEventListener('submit', function (event) {
     // Prevent default behaviour
     event.preventDefault();
@@ -54,6 +57,8 @@ function validateuserId() {
     if (checkIfEmpty(userId)) return;
     // is if it has only letters
     if (!checkIfOnlyLetters(userId)) return;
+    // Must of in certain length =>5 <=12
+    if (!meetLength(userId, 5, 12)) return;
     return true;
 }
 function validatename() {
@@ -78,7 +83,7 @@ function validatesex() {
 function validatePassword() {
     // Empty check
     if (checkIfEmpty(password)) return;
-    // Must of in certain length
+    // Must of in certain length =>7 <=12
     if (!meetLength(password, 7, 12)) return;
     // check password against our character set
     // 1- a
@@ -132,17 +137,19 @@ function isEmpty(value) {
     if (value === '') return true;
     return false;
 }
+// marks the border red to show that input is invalid
 function setInvalid(field, message) {
     field.className = 'invalid';
     field.nextElementSibling.innerHTML = message;
     field.nextElementSibling.style.color = red;
 }
+// marks the border green to show that input is valid
 function setValid(field) {
     field.className = 'valid';
     field.nextElementSibling.innerHTML = '';
     field.nextElementSibling.style.color = green;
 }
-
+//Regular expression to check if input only contains letters
 function checkIfOnlyLetters(field) {
     if (/^[a-zA-Z ]+$/.test(field.value)) {
         setValid(field);
@@ -152,6 +159,7 @@ function checkIfOnlyLetters(field) {
         return false;
     }
 }
+//Regular expression to check if input only contains numbers
 function checkIfOnlyNumbers(field) {
     if (/^[0-9 ]+$/.test(field.value)) {
         setValid(field);
@@ -164,12 +172,17 @@ function checkIfOnlyNumbers(field) {
 
 
 
-function checkIfRadio(field) {
-    if (!document.getElementByID("Male").checked && !document.getElementByID("Female").checked) {
-        alert("Please specify gender");
-        return;
-    }
-            }
+//function checkIfRadio(field) {
+//    if (!document.getElementByID("Male").checked && !document.getElementByID("Female").checked) {
+//        alert("Please specify gender");
+//        return;
+//    }
+// 
+//}
+
+
+
+// checks for the number of characters in a string
 function meetLength(field, minLength, maxLength) {
     if (field.value.length >= minLength && field.value.length <= maxLength) {
         setValid(field);
@@ -188,6 +201,9 @@ function meetLength(field, minLength, maxLength) {
         return false;
     }
 }
+
+//switch case was for experimental purposes
+//switch statement holds the regular expressions
 function containsCharacters(field, code) {
     let regEx;
     switch (code) {
@@ -227,6 +243,8 @@ function containsCharacters(field, code) {
             return false;
     }
 }
+
+// checks if the value in the field value satisfies the regular expression
 function matchWithRegEx(regEx, field, message) {
     if (field.value.match(regEx)) {
         setValid(field);
